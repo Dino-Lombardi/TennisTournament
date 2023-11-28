@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Schedule {
-	enum ScheduleType{
+	public enum ScheduleType{
 		GentlemenSingle,
 		LadiesSingle,
 		GentlemenDouble,
@@ -12,21 +12,24 @@ public class Schedule {
 		MixedDouble
 	}
 	private ScheduleType Type;
-	private List<Match> matchs = new ArrayList<Match>();
+	private List<Match> matches = new ArrayList<Match>();
 	private Tournament tournament;
 	private int actualRound=0;
 
-	public Schedule(Match match, Tournament tournament) {
-		matchs.add(match);
+	public Schedule(Tournament tournament, ScheduleType type) {
+		this.tournament = tournament;
+		this.Type = type;
+	}
+	public Schedule(Tournament tournament) {
 		this.tournament = tournament;
 	}
 	
-	public List<Match> getMatchs() {
-		return matchs;
+	public List<Match> getMatches() {
+		return matches;
 	}
 
-	public void setMatchs(List<Match> matchs) {
-		this.matchs = matchs;
+	public void setMatches(List<Match> matchs) {
+		this.matches = matchs;
 	}
 
 	public ScheduleType getType() {

@@ -24,23 +24,19 @@ public class Player extends Person {
 		return opponents;
 	}
 
-	public Player(String firstname, String lastname, String nationality, int rank, String gender) {
-		super(firstname, lastname, nationality);
+	public Player(int id, String firstname, String lastname, String nationality, int rank, String gender) {
+		super(id, firstname, lastname, nationality);
 		this.rank = rank;
 		this.gender = gender;
 	}
 	
-	public Player(String firstname, String lastname, String nationality, int rank, String gender,Opponent opp) {
-		super(firstname, lastname, nationality);
-		this.rank = rank;
-		this.gender = gender;
+	public Player(int id, String firstname, String lastname, String nationality, int rank, String gender,Opponent opp) {
+		this(id, firstname, lastname, nationality, rank, gender);
 		opponents.add(opp);
 	}
 	
-	public Player(String firstname, String lastname, String nationality, int rank, String gender,List<Opponent> opps) {
-		super(firstname, lastname, nationality);
-		this.rank = rank;
-		this.gender = gender;
+	public Player(int id, String firstname, String lastname, String nationality, int rank, String gender,List<Opponent> opps) {
+		this(id, firstname, lastname, nationality, rank, gender);
 		opponents = opps;
 	}
 	

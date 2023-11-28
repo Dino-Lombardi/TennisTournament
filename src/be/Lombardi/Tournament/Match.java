@@ -87,13 +87,12 @@ public class Match {
 			this.opponents = opponents;
 	}
 	
-	public Match(LocalDate date, int duration, int round, Schedule schedule, Opponent opponents[]) {
-		if(opponents.length > 2 || opponents.length < 1) {
-			System.out.println("Erreur d'initilisiation.");
-		}
-		else
-			this.opponents = opponents;
-		System.out.println(opponents);
+	public Match(LocalDate date, int duration, Schedule schedule, Opponent opponents[]) {
+		setOpponents(opponents);
+		this.schedule = schedule;
+		this.date = date;
+		this.duration = duration;
+		this.round = 0;
 	}
 	public void addOpponent(Opponent opponent) {
 		

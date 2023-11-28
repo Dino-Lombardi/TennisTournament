@@ -46,7 +46,10 @@ public class PlayerDAO extends DAO<Player> {
 			ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM Player");
 			Player player;
 			while(result.next()) {
-				player = new Player(result.getString(1), result.getString(2), result.getString(3), result.getInt(4), result.getString(5));
+				player = new Player(result.getInt("idPlayer"), 
+						result.getString("firstname"), result.getString("lastname"),
+						result.getString("nationality"), result.getInt("rank"), 
+						result.getString("gender"));
 				players.add(player);
 			}
 		}

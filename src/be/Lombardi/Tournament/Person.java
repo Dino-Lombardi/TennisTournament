@@ -1,14 +1,20 @@
 package be.Lombardi.Tournament;
 
 public class Person {
+	private int idPerson;
 	private String firstname;
 	private String lastname;
 	private String nationality;
 
-	public Person(String firstname, String lastname, String nationality) {
+	public Person(int id, String firstname, String lastname, String nationality) {
+		this.idPerson = id;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.nationality = nationality;
+	}
+	
+	public int getIdPerson() {
+		return idPerson;
 	}
 	
 	public String getFirstname() {
@@ -34,7 +40,8 @@ public class Person {
 	@Override
 	public int hashCode() {
 		
-		return this.getFirstname().hashCode() +
+		return 	idPerson + 
+				this.getFirstname().hashCode() +
 				this.getLastname().hashCode() +
 				this.getNationality().hashCode();
 	}

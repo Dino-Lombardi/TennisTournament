@@ -10,7 +10,7 @@ public class Opponent {
  
 	
 	public Opponent(Player p) {
-		AddPlayer(p);
+		players[0] = p;
 	}
 	
 	public List<Set> getSets() {
@@ -33,12 +33,8 @@ public class Opponent {
 		this.players = players;
 	}
 
-	public void AddPlayer(Player p) {
-		if(players[0] != null) {
-			players[1] = p;
-		}
-		else
-			players[0] = p;
+	public void AddSecondPlayer(Player p) {
+		players[1] = p;
 	}
 
 	public Player[] getPlayers() {
