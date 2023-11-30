@@ -32,7 +32,7 @@ public class MatchDAO extends DAO<Match> {
 
 		switch (schedule.getType()) {
 		  case GentlemenSingle:
-			  for(int i = 0; i < 1; i++) {
+			  for(int i = 0; i < 5; i++) {
 				  count=0;
 				  Opponent opponents[] = new Opponent[2];
 				  while(iterator.hasNext() && count < 2) {

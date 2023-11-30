@@ -52,9 +52,9 @@ public class TournamentDAO extends DAO<Tournament> {
 		Tournament tournament = new Tournament("Tennis Slam");
 		List<Player> players = playerDAO.getPlayers();
 		Collections.shuffle(players);
-		//for(int i=0 ; i < tournament.getSchedules().length ; i++) {
-			tournament.getSchedules()[0].setMatches(matchDAO.createMatches(tournament.getSchedules()[0], players));
-		//}
+		for(int i=0 ; i < tournament.getSchedules().length ; i++) {
+			tournament.getSchedules()[i].setMatches(matchDAO.createMatches(tournament.getSchedules()[i], players));
+		}
 		
 		return tournament;
 	}
